@@ -1,5 +1,5 @@
 # Quicksort-in-GNU-Assembler
-Just a smalll school project for System Programming class
+Just a small school project for System Programming class
 
 Written for IA-32 using the default AT&T syntax.
 
