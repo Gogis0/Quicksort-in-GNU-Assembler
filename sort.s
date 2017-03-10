@@ -11,19 +11,19 @@ sort:
     push %esi
     push %edi
 
-    # V ecx si pamatame pointer na zaciatok pola
+    # store array pointer in ecx
     mov 8(%ebp), %ecx
-    # V eax dolny index
+    # left index in eax
     mov 12(%ebp), %eax
-    # V ebx horny index
+    # right index in ebx
     mov 16(%ebp), %ebx
     
     cmp %eax, %ebx
     jle return
 
-    # eax bude pivot, edx bude iterator
+    # eax will hold a pivot, edx will serve as an iterator
     mov %eax, %edx
-    # esi bude boundary = left
+    # esi is boundary = left
     mov %eax, %esi
 
 loop:
@@ -38,7 +38,7 @@ loop:
     jle loop
 
     # swap(array[edx], array[++boundary])
-    # swap urobime pomocou edi
+    # swap will be done through esi
     inc %esi
     
     mov (%ecx, %esi, 4), %edi
